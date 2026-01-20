@@ -65,35 +65,52 @@ async function uploadImageToZhihu(imageUrl, cookie, pageUrl = '') {
 }
 
 /**
- * 专栏文章上传 API
+ * 专栏文章上传 API - 直接下载图片再上传
  */
 async function uploadToArticleApi(imageUrl, cookie) {
-  const UPLOAD_URL = 'https://zhuanlan.zhihu.com/api/uploaded_images';
-  
-  const formData = new FormData();
-  formData.append('url', imageUrl);
-  formData.append('source', 'article');
-  
-  const response = await fetch(UPLOAD_URL, {
-    method: 'POST',
-    headers: {
-      'Accept': '*/*',
-      'Cookie': cookie,
-      'x-requested-with': 'fetch'
-    },
-    body: formData
-  });
-  
-  if (!response.ok) {
-    throw new Error(`上传失败，状态码: ${response.status}`);
-  }
-  
-  const result = await response.json();
-  
-  if (result.src) {
-    return { success: true, uploadedUrl: result.src };
-  } else {
-    throw new Error('响应中没有图片 URL');
+  try {
+    // 先下载图片
+    console.log('下载图片:', imageUrl);
+    const imageResponse = await fetch(imageUrl);
+    if (!imageResponse.ok) {
+      throw new Error('下载图片失败');
+    }
+    
+    const blob = await imageResponse.blob();
+    console.log('图片下载成功，大小:', blob.size);
+    
+    // 上传到知乎
+    const UPLOAD_URL = 'https://zhuanlan.zhihu.com/api/uploaded_images';
+    const formData = new FormData();
+    formData.append('picture', blob, 'image.jpg');
+    formData.append('source', 'article');
+    
+    const response = await fetch(UPLOAD_URL, {
+      method: 'POST',
+      headers: {
+        'Accept': '*/*',
+        'Cookie': cookie,
+        'x-requested-with': 'fetch'
+      },
+      body: formData
+    });
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`上传失败，状态码: ${response.status}, 响应: ${errorText}`);
+    }
+    
+    const result = await response.json();
+    console.log('上传响应:', result);
+    
+    if (result.src) {
+      return { success: true, uploadedUrl: result.src };
+    } else {
+      throw new Error('响应中没有图片 URL: ' + JSON.stringify(result));
+    }
+  } catch (error) {
+    console.error('专栏上传失败:', error);
+    throw error;
   }
 }
 
