@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>知乎 Markdown 图片自动上传</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      width: 320px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 14px;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    
+    .header h1 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0066ff;
+      margin-bottom: 8px;
+    }
+    
+    .header p {
+      font-size: 12px;
+      color: #666;
+    }
+    
+    .content {
+      background: white;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    
+    .status {
+      margin-bottom: 16px;
+      padding: 12px;
+      background: #f0f9ff;
+      border-left: 3px solid #0066ff;
+      border-radius: 4px;
+    }
+    
+    .status-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    
+    .status-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .status-label {
+      color: #666;
+      font-size: 13px;
+    }
+    
+    .status-value {
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .status-value.success {
+      color: #52c41a;
+    }
+    
+    .status-value.error {
+      color: #ff4d4f;
+    }
+    
+    .instructions {
+      margin-top: 16px;
+      padding: 12px;
+      background: #fffbe6;
+      border-radius: 4px;
+      border: 1px solid #ffe58f;
+    }
+    
+    .instructions h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #d48806;
+      margin-bottom: 8px;
+    }
+    
+    .instructions ol {
+      margin-left: 20px;
+      font-size: 12px;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .instructions li {
+      margin-bottom: 4px;
+    }
+    
+    .footer {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+    }
+    
+    .footer a {
+      color: #0066ff;
+      text-decoration: none;
+    }
+    
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 10px;
+      margin-top: 12px;
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .btn:hover {
+      background: #0052cc;
+    }
+    
+    .btn:active {
+      background: #003d99;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📝 Markdown 图片上传</h1>
+    <p>让知乎写作更轻松</p>
+  </div>
+  
+  <div class="content">
+    <div class="status">
+      <div class="status-item">
+        <span class="status-label">插件状态:</span>
+        <span class="status-value success" id="plugin-status">✓ 已启用</span>
+      </div>
+      <div class="status-item">
+        <span class="status-label">Cookie 状态:</span>
+        <span class="status-value" id="cookie-status">检查中...</span>
+      </div>
+    </div>
+    
+    <div class="instructions">
+      <h3>💡 使用说明</h3>
+      <ol>
+        <li>打开知乎文章编辑页面</li>
+        <li>复制包含图片的 Markdown 内容</li>
+        <li>在编辑器中粘贴（Ctrl+V / Cmd+V）</li>
+        <li>插件会自动上传图片并替换链接</li>
+        <li>等待上传完成提示即可</li>
+      </ol>
+    </div>
+    
+    <button class="btn" id="test-btn">测试连接</button>
+  </div>
+  
+  <div class="footer">
+    <p>Made with ❤️ by <a href="https://github.com/liyupi" target="_blank">程序员鱼皮</a></p>
+    <p style="margin-top: 4px;">Version 1.0.0</p>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

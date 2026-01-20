@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "知乎 Markdown 图片自动上传",
+  "version": "1.0.1",
+  "description": "在知乎编辑器中粘贴 Markdown 内容时，自动上传外链图片到知乎图床",
+  "permissions": [
+    "storage",
+    "cookies"
+  ],
+  "host_permissions": [
+    "https://zhuanlan.zhihu.com/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://zhuanlan.zhihu.com/write",
+        "https://zhuanlan.zhihu.com/p/*/edit",
+        "https://www.zhihu.com/question/*/answer/*/edit",
+        "https://www.zhihu.com/question/*/write"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
